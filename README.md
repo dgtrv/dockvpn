@@ -3,15 +3,13 @@
 Quick instructions:
 
 ```bash
-CID=$(docker run -d --privileged -p 1194:1194/udp -p 443:443/tcp jpetazzo/dockvpn)
-docker run -t -i -p 8080:8080 --volumes-from $CID jpetazzo/dockvpn serveconfig
+git clone https://github.com/dgtrv/dockvpn.git
+cd dockvpn
+./start.sh
 ```
 
-Now download the file located at the indicated URL. You will get a
-certificate warning, since the connection is done over SSL, but we are
-using a self-signed certificate. After downloading the configuration,
-stop the `serveconfig` container. You can restart it later if you need
-to re-download the configuration, or to download it to multiple devices.
+Now download the file with scp:
+scp root@SERVER_IP:/root/config/client.ovpn WHERE_TO_PUT_client.ovpn
 
 The file can be used immediately as an OpenVPN profile. It embeds all the
 required configuration and credentials. It has been tested successfully on
