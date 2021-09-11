@@ -9,7 +9,9 @@ cd dockvpn
 ```
 
 Now download the file with scp:
+```bash
 scp root@SERVER_IP:/root/config/client.ovpn WHERE_TO_PUT_client.ovpn
+```
 
 The file can be used immediately as an OpenVPN profile. It embeds all the
 required configuration and credentials. It has been tested successfully on
