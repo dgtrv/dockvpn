@@ -11,5 +11,5 @@ services:
         source: ./config
         target: /etc/openvpn
     privileged: true
-    restart: "unless-stopped"
+    restart: "always"
 
