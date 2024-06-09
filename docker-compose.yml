@@ -1,0 +1,15 @@
+services:
+  vpn:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1194:1194/udp"
+      - "443:443/tcp"
+    volumes:
+      - type: bind
+        source: ./config
+        target: /etc/openvpn
+    privileged: true
+    restart: "unless-stopped"
+
