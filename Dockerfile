@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 RUN apt-get update -q
 RUN apt-get install -qy openvpn iptables curl
 ADD ./bin /usr/local/sbin
